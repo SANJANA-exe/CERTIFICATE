@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Certificate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #4a4d52;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Simulated Mobile Browser URL Bar */
+        .url-bar {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 1px solid #333;
+            width: 100%;
+        }
+
+        .url-box {
+            background-color: #2b2b2b;
+            border-radius: 20px;
+            padding: 6px 14px;
+            width: 100%;
+            color: #e0e0e0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* Main Content Container */
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Button Page View */
+        #button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 50px);
+            width: 100%;
+        }
+
+        .btn-certificate {
+            background-color: #2b74c5;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Certificate View */
+        #certificate-container {
+            display: none;
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            margin: 0 auto;
+        }
+
+        #certificate-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fake URL Bar -->
+    <div class="url-bar">
+        <div class="url-box" id="url-display">nptel.ac.in/noc/E_Certificate/NPTEL</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Initial View -->
+        <div id="button-container">
+            <button class="btn-certificate" onclick="showCertificate()">Course Certificate</button>
+        </div>
+
+        <!-- Certificate View -->
+        <div id="certificate-container">
+            <img src="certificate.jpg" alt="Course Certificate">
+        </div>
+    </div>
+
+    <script>
+        function showCertificate() {
+            // Update URL text in top bar
+            document.getElementById('url-display').textContent = 'archive.nptel.ac.in/content/noc/';
+            
+            // Switch views
+            document.getElementById('button-container').style.display = 'none';
+            document.getElementById('certificate-container').style.display = 'block';
+            document.body.style.backgroundColor = '#ffffff';
+        }
+    </script>
+
+</body>
+</html>
